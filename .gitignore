@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+db.sqlite3
+Pipfile
+Pipfile.lock
+.vscode
+.idea
+/static/
+/posts/migrations/
+/core/migrations/
+
+
