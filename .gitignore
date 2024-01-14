@@ -7,8 +7,13 @@ Pipfile.lock
 .vscode
 .idea
 /static/
+
+#Ignore all files inside migrations folder except __init__.py
+
 /posts/migrations/
+!/posts/migrations/__init__.py
+
 /core/migrations/
-/comment/migrations/
+!/core/migrations/__init__.py
 
 
