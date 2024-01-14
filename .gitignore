@@ -8,21 +8,3 @@ Pipfile.lock
 .idea
 /static/
 
-#Ignore all files inside migrations folder except __init__.py
-<<<<<<< HEAD
-
-/posts/migrations/
-!/posts/migrations/__init__.py
-
-/core/migrations/
-!/core/migrations/__init__.py
-=======
-/posts/migrations/*
-!/posts/migrations/__init__.py
-
-/core/migrations/*
-!/core/migrations/__init__.py
-
->>>>>>> f58f5df8be946ddbc58cadd63f8a86b83d955124
-
-
