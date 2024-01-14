@@ -1,3 +1,19 @@
 from django.db import models
+from django.conf import settings
+from autoslug import AutoSlugField
 
-# Create your models here.
+
+class Category(models.Model):
+    title = models.CharField(max_length=255)
+
+
+class Article(models.Model):
+    title = models.CharField(max_length=255)
+    slug = AutoSlugField(populate_from="title", unique=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    content = models.TextField()
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.title

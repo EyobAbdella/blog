@@ -9,5 +9,6 @@ Pipfile.lock
 /static/
 /posts/migrations/
 /core/migrations/
+/comment/migrations/
 
 
