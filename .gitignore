@@ -1,3 +1,5 @@
+/static/
+/static_root/
 .env
 __pycache__/
 *.pyc
