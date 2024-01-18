@@ -1,6 +1,46 @@
 {% extends "main.html" %} {% block content %}
-<h1>Sign Up</h1>
-<form method="post">
-  {% csrf_token %} {{ form.as_p }} <button type="submit">Sign Up</button>
-</form>
+<!-- <form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <input type="submit" value="Sign Up" />
+</form> -->
+<div id="auth-card">
+  <div id="card-content">
+    <div id="card-title">
+      <h2>SIGN UP</h2>
+      <div class="underline-title"></div>
+    </div>
+    <form method="post" class="form">
+      {% csrf_token %}
+      <label for="id_email" style="padding-top: 13px"
+        >{{ form.email.label_tag }}</label
+      >
+      {{ form.email }}
+      <div class="form-border"></div>
+      <label for="id_password" style="padding-top: 22px"
+        >{{ form.first_name.label_tag }}</label
+      >
+      {{ form.first_name }}
+
+      <div class="form-border"></div>
+      <label for="id_password" style="padding-top: 22px"
+        >{{ form.last_name.label_tag }}</label
+      >
+      {{ form.last_name }}
+      <div class="form-border"></div>
+      <label for="id_password" style="padding-top: 22px"
+        >{{ form.password1.label_tag }}</label
+      >
+      {{ form.password1 }}
+      <div class="form-border"></div>
+      <label for="id_password2" style="padding-top: 22px"
+        >{{ form.password2.label_tag }}</label
+      >
+      {{ form.password2 }}
+      <div class="form-border"></div>
+      <input id="submit-btn" type="submit" name="submit" value="SIGN UP" />
+      <a href="{% url 'login' %}" id="signup">Already have an account?</a>
+    </form>
+  </div>
+</div>
+
 {% endblock %}

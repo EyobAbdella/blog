@@ -1,5 +1,5 @@
 {% extends "main.html" %} {% block content %}
-<div id="login-card">
+<div id="auth-card">
   <div id="card-content">
     <div id="card-title">
       <h2>LOGIN</h2>
@@ -7,12 +7,12 @@
     </div>
     <form method="post" class="form">
       {% csrf_token %}
-      <label for="user-email" style="padding-top: 13px"
+      <label for="id_username" style="padding-top: 13px"
         >{{ form.username.label_tag }}</label
       >
       {{ form.username }}
       <div class="form-border"></div>
-      <label for="user-password" style="padding-top: 22px"
+      <label for="id_password" style="padding-top: 22px"
         >{{ form.password.label_tag }}</label
       >
       {{ form.password }}
