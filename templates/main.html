@@ -9,6 +9,6 @@
     <link rel="stylesheet" href="{% static 'style.css' %}" />
   </head>
   <body>
-    {% block content %}{% endblock %}
+    {% include 'navbar.html' %} {% block content %} {% endblock %}
   </body>
 </html>

@@ -1,7 +1,25 @@
 {% extends 'main.html' %} {% block content %}
 
-<form method="post" class="create-blog">
-  {{ form.media }} {{ form.title }} {{ form.content }}
+<form method="post" class="create-blog" enctype="multipart/form-data">
+  {% csrf_token %} {{ form.media }} {{ form.title }}
+  <div class="blog-post-cont">{{ form.category }}</div>
+  <div class="blog-post-cont">
+    <label class="file-input" for="id_image">
+      <span class="choose-file">Choose File</span>
+      <span id="file-name" class="file-name">No file chosen</span>
+    </label>
+    {{ form.image }}
+  </div>
+  <div>{{ form.content }}</div>
+
+  <button class="blog-submit">Post Blog</button>
 </form>
+
+<script>
+  document.getElementById("id_image").addEventListener("change", function () {
+    var fileName = this.files[0].name;
+    document.getElementById("file-name").innerText = fileName;
+  });
+</script>
 
 {% endblock %}
