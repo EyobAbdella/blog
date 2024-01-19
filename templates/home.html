@@ -2,25 +2,27 @@
 <div>{% load humanize %}</div>
 <div class="container">
   {% for article in articles %}
-  <div class="card">
-    <div class="card-header">
-      <img src="{{ article.image.url }}" alt="" />
-    </div>
-    <div class="card-body">
-      <span class="tag tag-purple">{{ article.category }}</span>
-      <h4>{{ article.title }}</h4>
-      <p>{{ article.content|truncatechars:80|safe }}</p>
-      <div class="user">
-        <img
-          src="https://th.bing.com/th/id/R.8ebcae52020758bfb51550f6c30f285a?rik=egPqt6R0ObI2%2fQ&pid=ImgRaw&r=0"
-          alt="user" />
-        <div class="user-info">
-          <h5>{{article.author}}</h5>
-          <small>{{ article.created_at|naturaltime }}</small>
+  <a href="{% url 'detail' article.slug %}">
+    <div class="card">
+      <div class="card-header">
+        <img src="{{ article.image.url }}" alt="" />
+      </div>
+      <div class="card-body">
+        <span class="tag tag-purple">{{ article.category }}</span>
+        <h4>{{ article.title }}</h4>
+        <p>{{ article.content|truncatechars:120|safe }}</p>
+        <div class="user">
+          <img
+            src="https://th.bing.com/th/id/R.8ebcae52020758bfb51550f6c30f285a?rik=egPqt6R0ObI2%2fQ&pid=ImgRaw&r=0"
+            alt="user" />
+          <div class="user-info">
+            <h5>{{article.author}}</h5>
+            <small>{{ article.created_at|naturaltime }}</small>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </a>
   {% endfor %}
 </div>
 {% endblock %}

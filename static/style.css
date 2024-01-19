@@ -19,6 +19,12 @@ body {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+.container a {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+}
 .card {
   margin: 10px;
   background-color: #fff;
@@ -64,6 +70,7 @@ body {
 
 .card-body p {
   font-size: 14px;
+  padding-bottom: 10px;
   margin-top: auto;
   /* margin: 0 0 40px; */
 }
@@ -92,9 +99,11 @@ body {
 /* navbar CSS */
 
 nav {
+  color: #ccc;
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
+  background-color: #202225;
 }
 
 .logo {
@@ -283,4 +292,62 @@ label {
   height: 2px;
   margin: 4px auto auto auto;
   width: 130px;
+}
+
+/* Blog Detail Page */
+.detial-continer .title {
+  font-size: 50px;
+  margin-bottom: 2rem;
+}
+
+.blog-image {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  padding: 10px 200px;
+}
+
+.blog-image img {
+  min-width: 100%;
+  object-fit: cover;
+  min-height: 100%;
+}
+
+.detail-content {
+  padding: 10px 200px;
+}
+.detail-header {
+  color: #ccc;
+  padding: 20px 200px 100px 200px;
+  background-color: #202225;
+}
+
+@media only screen and (max-width: 600px) {
+  .detial-continer .title {
+    font-size: 25px;
+    text-align: center;
+  }
+  .detail-content {
+    padding: 4px;
+  }
+  .blog-image {
+    padding: 4px;
+  }
+
+  .detail-header {
+    padding: 4px 6px 50px 6px;
+  }
+}
+
+.detail-info {
+  display: flex;
+  align-items: center;
+}
+
+.detail-info h4 {
+  font-weight: 200;
+}
+
+.detail-author {
+  margin: 0 1.5rem 0 5px;
 }
