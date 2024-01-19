@@ -1,7 +1,7 @@
 {% extends "main.html" %} {% block content %}
 <!-- <form method="post">
-  {% csrf_token %} {{ form.as_p }}
-  <input type="submit" value="Sign Up" />
+  {% csrf_token %} <label for="id_image">{{ form.image.label }}</label>
+  {{ form.image }}
 </form> -->
 <div id="auth-card">
   <div id="card-content">
@@ -9,31 +9,31 @@
       <h2>SIGN UP</h2>
       <div class="underline-title"></div>
     </div>
-    <form method="post" class="form">
+    <form method="post" class="form" enctype="multipart/form-data">
       {% csrf_token %}
       <label for="id_email" style="padding-top: 13px"
-        >{{ form.email.label_tag }}</label
+        >{{ form.email.label }}</label
       >
       {{ form.email }}
       <div class="form-border"></div>
-      <label for="id_password" style="padding-top: 22px"
-        >{{ form.first_name.label_tag }}</label
+      <label for="id_full_name" style="padding-top: 22px"
+        >{{ form.full_name.label }}</label
       >
-      {{ form.first_name }}
+      {{ form.full_name }}
 
       <div class="form-border"></div>
+
+      <label for="id_image" class="label-image">
+        <p id="profile-image">choose profile {{ form.image.label }}</p>
+      </label>
+      {{ form.image }}
       <label for="id_password" style="padding-top: 22px"
-        >{{ form.last_name.label_tag }}</label
-      >
-      {{ form.last_name }}
-      <div class="form-border"></div>
-      <label for="id_password" style="padding-top: 22px"
-        >{{ form.password1.label_tag }}</label
+        >{{ form.password1.label }}</label
       >
       {{ form.password1 }}
       <div class="form-border"></div>
       <label for="id_password2" style="padding-top: 22px"
-        >{{ form.password2.label_tag }}</label
+        >{{ form.password2.label }}</label
       >
       {{ form.password2 }}
       <div class="form-border"></div>
@@ -42,5 +42,11 @@
     </form>
   </div>
 </div>
+<script>
+  document.getElementById("id_image").addEventListener("change", function () {
+    var fileName = this.files[0].name;
+    document.getElementById("profile-image").innerText = fileName;
+  });
+</script>
 
 {% endblock %}

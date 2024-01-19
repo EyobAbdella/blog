@@ -15,11 +15,11 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ("email", "first_name", "last_name", "password1", "password2")
+        fields = ("email", "full_name", "password1", "password2", "image")
 
         widgets = {
-            "first_name": forms.TextInput(attrs={"class": "form-content"}),
-            "last_name": forms.TextInput(attrs={"class": "form-content"}),
+            "full_name": forms.TextInput(attrs={"class": "form-content"}),
+            "image": forms.ClearableFileInput(attrs={"class": "image-content"}),
         }
 
 

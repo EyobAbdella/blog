@@ -7,7 +7,7 @@ from .forms import CustomAuthenticationForm, SignUpForm
 
 def signup(request):
     if request.method == "POST":
-        form = SignUpForm(request.POST)
+        form = SignUpForm(request.POST, request.FILES)
         if form.is_valid():
             user = form.save()
             login(request, user)

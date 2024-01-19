@@ -12,9 +12,7 @@
         <h4>{{ article.title }}</h4>
         <p>{{ article.content|truncatechars:120|safe }}</p>
         <div class="user">
-          <img
-            src="https://th.bing.com/th/id/R.8ebcae52020758bfb51550f6c30f285a?rik=egPqt6R0ObI2%2fQ&pid=ImgRaw&r=0"
-            alt="user" />
+          <img src="{{ article.author.image.url }}" alt="user" />
           <div class="user-info">
             <h5>{{article.author}}</h5>
             <small>{{ article.created_at|naturaltime }}</small>

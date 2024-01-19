@@ -8,16 +8,16 @@
         <div class="detail-info">
           <div class="user">
             <img
-              src="https://th.bing.com/th/id/R.8ebcae52020758bfb51550f6c30f285a?rik=egPqt6R0ObI2%2fQ&pid=ImgRaw&r=0"
-              alt="user" />
+            src="https://th.bing.com/th/id/R.8ebcae52020758bfb51550f6c30f285a?rik=egPqt6R0ObI2%2fQ&pid=ImgRaw&r=0"
+            alt="user" />
           </div>
           <h4 class="detail-author">{{article.author}}</h4>
           <h4>{{ article.created_at|naturalday }}</h>
+          </div>
         </div>
-    </div>
-  <div class="blog-image">
-    <img
-      src="https://th.bing.com/th/id/R.8ebcae52020758bfb51550f6c30f285a?rik=egPqt6R0ObI2%2fQ&pid=ImgRaw&r=0"
+        <div class="blog-image">
+          <img
+          src="{{ article.image.url }}"
       alt="user" />
   </div>
   <div class="detail-content">
