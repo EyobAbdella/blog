@@ -12,7 +12,7 @@
         <span class="tag tag-purple">{{ article.category }}</span>
         <h4>{{ article.title }}</h4>
         <div class="article-content">
-          {{ article.content|truncatechars:200|safe }}
+          {{ article.content|truncatechars:180|safe }}
         </div>
         <div class="user">
           <img src="{{ article.author.image.url }}" alt="user" />
@@ -26,4 +26,5 @@
   </a>
   {% endfor %}
 </div>
-{% endblock %}
+
+{% include 'footer.html' %} {% endblock %}

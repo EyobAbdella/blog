@@ -5,10 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-}
-
-body {
-  line-height: 1;
+  /* font-family: serif; */
 }
 
 /* Article CSS */
@@ -26,7 +23,7 @@ body {
 }
 
 .card {
-  height: 410px;
+  height: 420px;
   width: 280px;
   border-radius: 10px;
   transition: box-shadow 0.3s ease;
@@ -48,7 +45,7 @@ body {
 .card-body span {
   font-size: 12px;
   background: #0d9488;
-  padding: 3px 8px;
+  padding: 3px 15px;
   margin: 0 4px;
   border-radius: 1rem;
   color: #fff;
@@ -73,7 +70,7 @@ body {
   /* border: 1px solid black; */
   align-items: center;
   gap: 8px;
-  padding: 0 8px;
+  padding: 0 4px;
 }
 
 .user img {
@@ -90,6 +87,7 @@ nav {
   justify-content: space-between;
   padding: 20px;
   background-color: #202225;
+  border-bottom: 1px solid #3a3a3a;
 }
 
 nav a {
@@ -311,8 +309,9 @@ label {
 
 /* Blog Detail Page */
 .detial-continer .title {
-  font-size: 50px;
+  font-size: 60px;
   margin-bottom: 2rem;
+  font-family: serif;
 }
 
 .blog-image {
@@ -357,12 +356,88 @@ label {
 .detail-info {
   display: flex;
   align-items: center;
+  font-size: 14px;
+  color: #7a7a7a;
 }
 
 .detail-info h4 {
-  font-weight: 200;
+  font-weight: lighter;
 }
 
 .detail-author {
   margin: 0 1.5rem 0 5px;
+}
+
+.read-time {
+  margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer */
+
+footer {
+  min-height: 300px;
+  width: 100%;
+  background-color: #202225;
+  color: #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 40px;
+  color: #c9c6c6;
+}
+
+@media only screen and (max-width: 768px) {
+  footer {
+    padding: 10px;
+    justify-content: center;
+  }
+}
+
+footer p {
+  font-family: serif;
+  text-align: center;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.recent-post {
+  width: 300px;
+  text-align: center;
+}
+
+.copy-right {
+  background-color: #202225;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  border-top: 1px solid #434343;
+  text-align: center;
+  color: #afafaf;
+}
+
+.about span {
+  font-size: 18px;
+  color: #0d9488;
+  cursor: pointer;
+}
+
+.about div {
+  font-size: 16px;
+  max-width: 400px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 1rem;
+}
+
+.connect-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 1rem;
+}
+
+.recent-post {
+  margin: 1rem 0;
 }

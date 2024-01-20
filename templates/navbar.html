@@ -1,5 +1,7 @@
 <nav>
-  <div class="logo">Logo</div>
+  <a href="{% url 'home' %}">
+    <div class="logo">Logo</div>
+  </a>
   <div class="auth">
     <a href="{% url 'login' %}" class="login">Login</a>
     <a href="{% url 'signup' %}" class="signup">SignUp</a>
