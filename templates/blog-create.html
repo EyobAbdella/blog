@@ -2,6 +2,7 @@
 
 <form method="post" class="create-blog" enctype="multipart/form-data">
   {% csrf_token %} {{ form.media }} {{ form.title }}
+  <div>{{ form.read_time }}</div>
   <div class="blog-post-cont">{{ form.category }}</div>
   <div class="blog-post-cont">
     <label class="file-input" for="id_image">

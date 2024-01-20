@@ -18,7 +18,14 @@ class Article(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     content = RichTextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    read_time = models.PositiveSmallIntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        words_per_minute = 200
+        total_words = len(self.content.split())
+        self.read_time = int(total_words / words_per_minute)
+        super().save(*args, **kwargs)
 
     def __str__(self) -> str:
         return self.title

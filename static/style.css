@@ -13,19 +13,20 @@ body {
 
 /* Article CSS */
 
-a {
-  color: black;
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 10px;
 }
 
-.container {
-  margin: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 20px;
+.container a {
+  color: #202225;
 }
 
 .card {
-  height: 400px;
+  height: 410px;
   width: 280px;
   border-radius: 10px;
   transition: box-shadow 0.3s ease;
@@ -37,10 +38,11 @@ a {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
-.card-body p {
+.card-body .article-content {
   font-size: 14px;
   margin: 10px 0;
-  padding: 0 4px;
+  height: 80px;
+  padding: 0 8px;
 }
 
 .card-body span {
@@ -54,7 +56,7 @@ a {
 
 .card-body h4 {
   margin-top: 10px;
-  padding: 0 4px;
+  padding: 0 8px;
 }
 
 .card-header img {
@@ -67,9 +69,11 @@ a {
 
 .user {
   display: flex;
+  height: 50px;
+  /* border: 1px solid black; */
   align-items: center;
   gap: 8px;
-  padding: 0 4px;
+  padding: 0 8px;
 }
 
 .user img {
@@ -84,17 +88,22 @@ nav {
   color: #ccc;
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 20px;
   background-color: #202225;
+}
+
+nav a {
+  color: #fff;
+}
+
+.home-page-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
 .logo {
   font-size: 25px;
-}
-
-.auth {
-  display: flex;
-  gap: 20px;
 }
 
 /* Create Blog */
@@ -111,6 +120,11 @@ nav {
   display: grid;
   place-items: center;
   margin-top: 1rem;
+}
+
+.auth {
+  display: flex;
+  gap: 30px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -187,6 +201,27 @@ nav {
 
 /* auth page */
 
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-login {
+  height: 80vh;
+}
+.auth-signup {
+  height: 90vh;
+}
+
+.label-image {
+  margin-top: 1rem;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 a {
   text-decoration: none;
 }
@@ -202,10 +237,8 @@ label {
   text-align: right;
 }
 #auth-card {
-  /* background: #fbfbfb; */
   border-radius: 8px;
   max-height: 550px;
-  margin: 0 auto;
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
   width: 450px;
   padding: 10px 0;
@@ -286,7 +319,7 @@ label {
   margin: 2rem 0;
   display: flex;
   justify-content: center;
-  padding: 10px 200px;
+  padding: 10px 100px;
 }
 
 .blog-image img {
@@ -296,11 +329,11 @@ label {
 }
 
 .detail-content {
-  padding: 10px 200px;
+  padding: 10px 100px;
 }
 .detail-header {
   color: #ccc;
-  padding: 20px 200px 100px 200px;
+  padding: 20px 100px 100px 100px;
   background-color: #202225;
 }
 

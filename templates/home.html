@@ -11,7 +11,9 @@
       <div class="card-body">
         <span class="tag tag-purple">{{ article.category }}</span>
         <h4>{{ article.title }}</h4>
-        <p>{{ article.content|truncatechars:200|safe }}</p>
+        <div class="article-content">
+          {{ article.content|truncatechars:200|safe }}
+        </div>
         <div class="user">
           <img src="{{ article.author.image.url }}" alt="user" />
           <div class="user-info">
