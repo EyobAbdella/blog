@@ -4,7 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
@@ -15,9 +16,10 @@ body {
 
 .container {
   display: flex;
-  width: 1040px;
-  justify-content: space-evenly;
+  width: 100%;
+  justify-content: center;
   flex-wrap: wrap;
+  min-width: 100%;
 }
 
 .container a {
@@ -26,7 +28,7 @@ body {
   text-decoration: none;
 }
 .card {
-  margin: 10px;
+  /* margin: 10px; */
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
@@ -34,6 +36,18 @@ body {
   width: 300px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+    /* padding: 0 2px; */
+    /* box-shadow: none; */
+    border-radius: 0;
+    margin-top: 10px;
+    padding: 0 6px;
+  }
+}
+
 .card-header img {
   width: 100%;
   height: 200px;
@@ -109,6 +123,12 @@ nav {
 
 .logo {
   font-size: 25px;
+}
+
+.home-page-link {
+  position: absolute;
+  top: 30px;
+  left: 30px;
 }
 
 /* Create Blog */
@@ -231,10 +251,9 @@ label {
   text-align: right;
 }
 #auth-card {
-  /* background: #fbfbfb; */
   border-radius: 8px;
   max-height: 550px;
-  margin: 0 auto;
+  margin: 2rem auto;
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
   width: 450px;
   padding: 10px 0;
@@ -312,7 +331,9 @@ label {
 }
 
 .blog-image {
-  margin: 2rem 0;
+  margin: 2rem auto;
+  max-width: 1000px;
+  max-height: 1000px;
   display: flex;
   justify-content: center;
   padding: 10px 200px;
