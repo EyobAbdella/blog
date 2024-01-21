@@ -10,6 +10,10 @@
       </div>
       <form method="post" class="form" enctype="multipart/form-data">
         {% csrf_token %}
+        <div style="color: brown; margin: 1rem 0">
+          {% for field, errors in form.errors.items %} {% for error in errors %}
+          {{ error }} {% endfor %} {% endfor %}
+        </div>
         <label for="id_email" style="padding-top: 13px"
           >{{ form.email.label }}</label
         >

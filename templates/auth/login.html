@@ -1,14 +1,18 @@
 {% extends "main.html" %} {% block content %}
 <a class="home-page-link" href="{% url 'home' %}">LOGO</a>
 <div class="auth-container auth-login">
-  <div id="auth-card" style="margin-top: 5rem">
+  <div id="auth-card">
     <div id="card-content">
       <div id="card-title">
         <h2>LOGIN</h2>
         <div class="underline-title"></div>
       </div>
       <form method="post" class="form">
-        {% csrf_token %}
+        {% csrf_token %} {% if form.non_field_errors %}
+        <div style="color: brown; margin: 1rem 0">
+          {{ form.non_field_errors.as_text }}
+        </div>
+        {% endif %}
         <label for="id_username" style="padding-top: 13px"
           >{{ form.username.label_tag }}</label
         >

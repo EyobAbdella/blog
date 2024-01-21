@@ -1,5 +1,4 @@
-{% extends 'main.html' %} {% block content %}
-
+{% extends 'main.html' %} {% block content %} {% include 'navbar.html' %}
 <form method="post" class="create-blog" enctype="multipart/form-data">
   {% csrf_token %} {{ form.media }} {{ form.title }}
   <div>{{ form.read_time }}</div>
@@ -22,5 +21,4 @@
     document.getElementById("file-name").innerText = fileName;
   });
 </script>
-
-{% endblock %}
+{% include 'footer.html' %} {% endblock %}
