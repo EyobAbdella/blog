@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  /* font-family: serif; */
 }
 
 /* Article CSS */
@@ -16,6 +15,7 @@
   flex-wrap: wrap;
   gap: 30px;
   margin: 10px;
+  margin-top: 1.5rem;
 }
 
 .container a {
@@ -24,7 +24,7 @@
 
 .card {
   height: 420px;
-  width: 280px;
+  max-width: 280px;
   border-radius: 10px;
   transition: box-shadow 0.3s ease;
   transition: transform 0.5s ease;
@@ -37,9 +37,11 @@
   transform: translateY(-1.25rem);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   .card {
     width: 100%;
+    box-shadow: none;
+    max-width: none;
   }
 }
 
@@ -72,6 +74,12 @@
   border-radius: 10px 10px 0 0;
 }
 
+@media only screen and (max-width: 600px) {
+  .card-header img {
+    border-radius: 0;
+  }
+}
+
 .user {
   display: flex;
   height: 50px;
@@ -93,13 +101,15 @@ nav {
   color: #ccc;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 5px 20px;
+  align-items: center;
   background-color: #202225;
   border-bottom: 1px solid #3a3a3a;
 }
 
 nav a {
   color: #fff;
+  margin-left: 1rem;
 }
 
 .home-page-link {
@@ -109,7 +119,10 @@ nav a {
 }
 
 .logo {
-  font-size: 25px;
+  height: 4rem;
+  width: 10rem;
+  mix-blend-mode: lighten;
+  object-fit: contain;
 }
 
 /* auth page */
@@ -157,7 +170,7 @@ label {
 }
 #auth-card {
   border-radius: 8px;
-  max-height: 800px;
+  max-height: 600px;
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
   width: 450px;
 }
@@ -225,6 +238,10 @@ label {
   height: 2px;
   margin: 4px auto auto auto;
   width: 130px;
+}
+
+#id_image {
+  display: none;
 }
 
 /* Blog Detail Page */
@@ -298,6 +315,7 @@ label {
 /* Footer */
 
 footer {
+  margin-top: 2rem;
   min-height: 300px;
   width: 100%;
   background-color: #202225;
@@ -323,10 +341,15 @@ footer p {
   color: #ccc;
 }
 
-.explore-work {
+.service {
   width: 300px;
   text-align: center;
-  margin-top: auto;
+}
+
+.service ul li {
+  text-align: start;
+  list-style: none;
+  margin-top: 8px;
 }
 
 .copy-right {

@@ -1,5 +1,5 @@
 /media/
-/static_root/
+/staticfiles/
 .env
 __pycache__/
 *.pyc
