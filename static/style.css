@@ -1,3 +1,4 @@
+/* Global Styles */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 * {
@@ -8,7 +9,6 @@
 }
 
 /* Article CSS */
-
 .container {
   display: flex;
   justify-content: center;
@@ -26,8 +26,7 @@
   height: 420px;
   max-width: 280px;
   border-radius: 10px;
-  transition: box-shadow 0.3s ease;
-  transition: transform 0.5s ease;
+  transition: box-shadow 0.3s ease, transform 0.5s ease;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
@@ -77,13 +76,13 @@
 @media only screen and (max-width: 600px) {
   .card-header img {
     border-radius: 0;
+    border-radius: 10px;
   }
 }
 
 .user {
   display: flex;
   height: 50px;
-  /* border: 1px solid black; */
   align-items: center;
   gap: 8px;
   padding: 0 4px;
@@ -95,8 +94,7 @@
   border-radius: 50%;
 }
 
-/* navbar CSS */
-
+/* Navbar CSS */
 nav {
   color: #ccc;
   display: flex;
@@ -125,8 +123,7 @@ nav a {
   object-fit: contain;
 }
 
-/* auth page */
-
+/* Auth Page */
 .auth-container {
   display: flex;
   justify-content: center;
@@ -141,6 +138,7 @@ nav a {
 .auth-login {
   height: 80vh;
 }
+
 .auth-signup {
   height: 100vh;
   padding-bottom: 2rem;
@@ -161,6 +159,7 @@ a {
 label {
   font-size: 11pt;
 }
+
 #forgot-pass {
   color: #2dbd6e;
   font-family: "Raleway", sans-serif;
@@ -168,6 +167,7 @@ label {
   margin-top: 3px;
   text-align: right;
 }
+
 #auth-card {
   border-radius: 8px;
   max-height: 600px;
@@ -186,6 +186,7 @@ label {
 #card-content {
   padding: 12px 44px;
 }
+
 #card-title {
   font-family: "Raleway Thin", sans-serif;
   letter-spacing: 4px;
@@ -193,6 +194,7 @@ label {
   padding-top: 13px;
   text-align: center;
 }
+
 #signup {
   color: #2dbd6e;
   font-family: "Raleway", sans-serif;
@@ -200,6 +202,7 @@ label {
   margin-top: 16px;
   text-align: center;
 }
+
 #submit-btn {
   background: -webkit-linear-gradient(right, #a6f77b, #2dbd6e);
   border: none;
@@ -214,25 +217,30 @@ label {
   transition: 0.25s;
   width: 153px;
 }
+
 #submit-btn:hover {
   box-shadow: 0px 1px 18px #24c64f;
 }
+
 .form {
   display: flex;
   align-items: left;
   flex-direction: column;
 }
+
 .form-border {
   background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
   height: 1px;
   width: 100%;
 }
+
 .form-content {
   /* background: #fbfbfb; */
   border: none;
   outline: none;
   padding-top: 10px;
 }
+
 .underline-title {
   background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
   height: 2px;
@@ -268,6 +276,7 @@ label {
 .detail-content {
   padding: 10px 100px;
 }
+
 .detail-header {
   color: #ccc;
   padding: 20px 100px 100px 100px;
@@ -313,7 +322,6 @@ label {
 }
 
 /* Footer */
-
 footer {
   margin-top: 2rem;
   min-height: 300px;
@@ -330,7 +338,6 @@ footer {
 @media only screen and (max-width: 768px) {
   footer {
     padding: 10px;
-    justify-content: center;
   }
 }
 
@@ -346,8 +353,15 @@ footer p {
   text-align: center;
 }
 
+@media only screen and (max-width: 700px) {
+  .service {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
 .service ul li {
-  text-align: start;
+  text-align: center;
   list-style: none;
   margin-top: 8px;
 }
@@ -382,4 +396,15 @@ footer p {
   gap: 8px;
   padding-left: 1rem;
   margin-top: 10px;
+  justify-content: center;
+}
+
+.contact {
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .contact {
+    width: 100%;
+  }
 }
