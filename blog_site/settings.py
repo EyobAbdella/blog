@@ -1,12 +1,22 @@
 from pathlib import Path
+import cloudinary_storage
+import environ
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env(
+    DEBUG=(bool, True),
+    SECRET_KEY=(str, "django-insecure-yr&ij)xv5sh6v&q^^-ps*uohyj*5*w9ffro9pxd@*p8rsv+qgh"),
+    CLOUD_NAME=(str, ""),
+    API_KEY=(str, ""),
+    API_SECRET=(str, ""),
+)
 
-SECRET_KEY = "django-insecure-yr&ij)xv5sh6v&q^^-ps*uohyj*5*w9ffro9pxd@*p8rsv+qgh"
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-DEBUG = True
+DEBUG = env("DEBUG")
+SECRET_KEY = env("SECRET_KEY")
 
 ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1", "localhost"]
 
@@ -19,6 +29,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
+    'cloudinary',
+    'cloudinary_storage',
     "ckeditor",
     "posts",
     "core",
@@ -103,3 +115,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 AUTH_USER_MODEL = "core.User"
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env("CLOUD_NAME"),
+    'API_KEY': env("API_KEY"),
+    'API_SECRET': env("API_SECRET")
+}
+
+if not DEBUG:
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
