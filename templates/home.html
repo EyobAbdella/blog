@@ -2,7 +2,7 @@
 <div>{% load humanize %}</div>
 {% include 'navbar.html' %}
 <div class="container">
-  {% for article in articles %} {% for _ in "123456" %}
+  {% for article in articles %}
   <a href="{% url 'detail' article.slug %}">
     <div class="card">
       <div class="card-header">
@@ -24,7 +24,7 @@
       </div>
     </div>
   </a>
-  {% endfor %} {% endfor %}
+  {% endfor %}
 </div>
 
 {% include 'footer.html' %} {% endblock %}
