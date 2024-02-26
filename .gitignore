@@ -9,5 +9,4 @@ Pipfile
 Pipfile.lock
 .vscode
 .idea
-/static/
 
