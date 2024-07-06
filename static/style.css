@@ -377,7 +377,7 @@ footer p {
   color: #afafaf;
 }
 
-.about span {
+.portfolio-link {
   font-size: 18px;
   color: #0d9488;
   cursor: pointer;
@@ -407,4 +407,56 @@ footer p {
   .contact {
     width: 100%;
   }
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.write-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  width: 26px;
+  height: 23px;
+  border: 0.5px solid #8d8c8c;
+  border-radius: 4px;
+}
+
+.search-blog {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.search {
+  border: none;
+  border-radius: 18px;
+  width: 250px;
+  outline: none;
+  padding: 12px;
+  background-color: #3d3d3d;
+  font-size: 15px;
+  color: #a0a0a0;
+}
+
+.search::placeholder {
+  color: #a0a0a0;
+  font-size: 15px;
+}
+
+.signup {
+  padding: 6px 8px;
+  border-radius: 6px;
+  background-color: #38466e;
 }

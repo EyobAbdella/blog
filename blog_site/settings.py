@@ -1,5 +1,4 @@
 from pathlib import Path
-import cloudinary_storage
 import environ
 import os
 
@@ -7,13 +6,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env(
     DEBUG=(bool, True),
-    SECRET_KEY=(str, "django-insecure-yr&ij)xv5sh6v&q^^-ps*uohyj*5*w9ffro9pxd@*p8rsv+qgh"),
+    SECRET_KEY=(
+        str,
+        "django-insecure-yr&ij)xv5sh6v&q^^-ps*uohyj*5*w9ffro9pxd@*p8rsv+qgh",
+    ),
     CLOUD_NAME=(str, ""),
     API_KEY=(str, ""),
     API_SECRET=(str, ""),
 )
 
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 DEBUG = env("DEBUG")
 SECRET_KEY = env("SECRET_KEY")
@@ -29,8 +31,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
-    'cloudinary',
-    'cloudinary_storage',
+    "cloudinary",
+    "cloudinary_storage",
     "ckeditor",
     "posts",
     "core",
@@ -67,7 +69,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "blog_site.wsgi.application"
 
 
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -92,7 +93,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
@@ -100,7 +100,6 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
-
 
 
 STATIC_URL = "static/"
@@ -118,10 +117,10 @@ AUTH_USER_MODEL = "core.User"
 
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': env("CLOUD_NAME"),
-    'API_KEY': env("API_KEY"),
-    'API_SECRET': env("API_SECRET")
+    "CLOUD_NAME": env("CLOUD_NAME"),
+    "API_KEY": env("API_KEY"),
+    "API_SECRET": env("API_SECRET"),
 }
 
 if not DEBUG:
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"

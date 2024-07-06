@@ -13,6 +13,7 @@ class BlogListView(ListView):
     def get_queryset(self) -> QuerySet[Any]:
         return Article.objects.all()
 
+
 class BlogDetailView(DetailView):
     model = Article
     template_name = "blog-detail.html"
