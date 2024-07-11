@@ -420,6 +420,7 @@ footer p {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin: 0 5px;
 }
 
 .write-icon {

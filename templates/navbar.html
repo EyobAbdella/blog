@@ -3,7 +3,6 @@
 <nav>
   <div class="search-blog">
     <a href="{% url 'home' %}">
-      <!-- <div class="logo">Logo</div> -->
       <img class="logo" src="{% static 'logo.png' %}" alt="" />
     </a>
     <input class="search" type="text" placeholder="Search Blogs..." />
@@ -30,8 +29,13 @@
       </div>
       <p>Create</p>
     </a>
-
+    {% if user.is_authenticated %}
+    <div class="user">
+      <img src="{{ user.image.url }}" alt="{{ user }}" />
+    </div>
+    {% else %}
     <a href="{% url 'login' %}" class="login">Login</a>
     <a href="{% url 'signup' %}" class="signup">SignUp</a>
+    {% endif %}
   </div>
 </nav>
