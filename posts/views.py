@@ -2,6 +2,7 @@ from django.forms import BaseModelForm
 from django.urls import reverse
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
 from .forms import ArticleForm
 from .models import Article, Category
 
@@ -12,6 +13,11 @@ class BlogListView(ListView):
     context_object_name = "articles"
 
     def get_queryset(self):
+        query = self.request.GET.get("q")
+        if query:
+            return Article.objects.filter(
+                Q(title__icontains=query) | Q(content__icontains=query)
+            )
         return Article.objects.all()
 
 
