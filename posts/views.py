@@ -7,7 +7,7 @@ from .forms import ArticleForm
 from .models import Article, Category
 
 
-class BlogListView(ListView):
+class ArticleListView(ListView):
     model = Article
     template_name = "home.html"
     context_object_name = "articles"
@@ -21,9 +21,9 @@ class BlogListView(ListView):
         return Article.objects.all()
 
 
-class BlogCreateView(LoginRequiredMixin, CreateView):
+class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
-    template_name = "blog-create.html"
+    template_name = "article-create.html"
     form_class = ArticleForm
 
     def get_success_url(self):
@@ -39,7 +39,7 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
         return context
 
 
-class BlogDetailView(DetailView):
+class ArticleDetailView(DetailView):
     model = Article
-    template_name = "blog-detail.html"
+    template_name = "article-detail.html"
     context_object_name = "article"

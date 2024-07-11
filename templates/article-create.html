@@ -1,5 +1,6 @@
-{% extends "main.html" %} {% block content %}
-<div class="blog-create">
+{% extends "main.html" %} {% block title %} Create Article - AdwaBlog
+{%endblock%} {%block content %}
+<div class="article-create">
   <a href="{% url 'home' %}">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +30,7 @@
     </label>
     {{form.image}} {{form.content}}
 
-    <input class="save-blog" type="submit" value="save" />
+    <input class="save-article" type="submit" value="save" />
   </form>
 </div>
 

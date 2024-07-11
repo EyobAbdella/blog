@@ -1,4 +1,6 @@
-{% extends "main.html" %} {% block content %} {% load static %}
+{% extends "main.html" %}
+{% block title %} {{ article.title }} - AdwaBlog{% endblock %}
+{% block content %}
 
 <div>{% load humanize %} {% include 'navbar.html' %}
 </div>
@@ -25,7 +27,7 @@
           <h4>{{ article.created_at|naturalday }}</h>
           </div>
         </div>
-        <div class="blog-image">
+        <div class="article-image">
           <img
           src="{{ article.image.url }}"
       alt="user" />
